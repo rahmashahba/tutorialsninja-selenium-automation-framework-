@@ -62,13 +62,13 @@
             </class>
 
 
-            <!--
-
+           
             <class name="testcases.TC01_Account">
                 <methods>
                     <include name="randomlyChooseCurrency_successfully"/>
                 </methods>
             </class>
+ <!--
 
             <class name="testcases.TC03_selectRandomCategory">
                 <methods>
