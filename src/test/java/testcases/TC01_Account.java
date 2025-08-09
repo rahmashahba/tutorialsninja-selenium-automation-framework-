@@ -75,7 +75,7 @@ public class TC01_Account extends testbase {
 
         // Assert - Positive verification
         Assert.assertTrue(account.isMyAccountVisible(), "My Account should be visible after successful login");
-
+        Thread.sleep(300);
         // Assert - Negative verification (optional)
         Assert.assertFalse(!account.isMyAccountVisible(), "Login link should not be visible after successful login");
     }

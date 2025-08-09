@@ -69,4 +69,8 @@ To set up the  Tutorial Ninja application locally, follow these steps:
 * Make your changes and submit a pull request.
 
 ## License
+<<<<<<< HEAD
 * TutorialsNinja is licensed under the MIT License.
+=======
+* TutorialsNinja is licensed under the MIT License.
+>>>>>>> cc11a8acb62eebe021fef14d861bf8addb4c6e89
