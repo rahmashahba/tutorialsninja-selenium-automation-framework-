@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SP1_TCs">
+    <test name="Registr Account with new data">
+        <classes>
+
+            <class name="testcases.TC03_selectRandomCategory">
+                <methods>
+                    <include name="searchTagsSuccessfully"/>
+                </methods>
+            </class>
+            <class name="testcases.TC04_E2E_AddToCart">
+                <methods>
+                    <include name="searchSuccessfully"/>
+                </methods>
+            </class>
+
+
+        </classes>
+    </test>
+</suite>
