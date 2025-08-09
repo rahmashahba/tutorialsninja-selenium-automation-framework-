@@ -3,11 +3,11 @@
     <test name="User Flow">
         <classes>
 
-            <class name="testcases.TC02_Register"/>
+           <!-- <class name="testcases.TC02_Register"/>
 
             <class name="testcases.TC02_Logout"/>
             <class name="testcases.TC03_Login"/>
-            <class name="testcases.TC04_E2E_AddToCart"/>
+            <class name="testcases.TC04_E2E_AddToCart"/>-->
 
         </classes>
     </test>

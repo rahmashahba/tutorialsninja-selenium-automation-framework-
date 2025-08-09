@@ -1,10 +1,18 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
+
+import static drivers.DriverHolder.getDriver;
+
+import static Pages.PageBase.hoverAndClickONAWebElement;
+import static Pages.PageBase.hoverToWebElement;
 
 public class P01_Home_Page {
 
@@ -25,6 +33,11 @@ public class P01_Home_Page {
     @FindBy(xpath = "//ul/li/a[text()=\"Login\"]")
     WebElement login;
 
+    @FindBy(xpath = "//*[@id=\"menu\"]/div[2]/ul/li")
+    public List<WebElement> categoriesMenuListLi;
+
+    @FindBy(xpath = "(//*[@id=\"menu\"]/div[2]/ul/li/div)")
+    public List<WebElement> subCategoryElementsLi;
 
     //public action method
 
@@ -50,5 +63,15 @@ public class P01_Home_Page {
         } catch (TimeoutException e) {
             return false;
         }
+    }
+    public void hoverToRandomCategory(int index) {
+        WebElement category = getDriver().findElement(By.xpath("(//div/ul[@class=\"nav navbar-nav\"]/li)[" + index + "]"));
+        hoverToWebElement(getDriver(), category);
+
+    }
+
+    public void hoverToSubRandomCategory(int indexsub) {
+        WebElement subCategory = getDriver().findElement(By.xpath("(//div/ul[@class=\"list-unstyled\"]/li)[" + indexsub + "]"));
+        hoverAndClickONAWebElement(getDriver(), subCategory);
     }
 }

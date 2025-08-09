@@ -48,6 +48,12 @@ public class P03_account {
     @FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
     WebElement emailFailedMsg;
 
+    @FindBy(xpath = "(//ul/li/a/i)[6]")
+    WebElement homePageIcon;
+
+    public void clickOnHomePageIcon() {
+        homePageIcon.click();
+    }
 
 
     public void new_login(String email, String password) {
