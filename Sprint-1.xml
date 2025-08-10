@@ -9,71 +9,65 @@
                 </methods>
             </class>
 
-            <class name="testcases.TC02_Register">
+           <class name="testcases.TC02_Register">
                 <methods>
                     <include name="reg_new_acc_with_vailed_data_Passed_P"/>
                 </methods>
             </class>
 
 
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="logout_successfully"/>
-                </methods>
-            </class>
+                 <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="logout_successfully"/>
+                    </methods>
+                </class>
 
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="login_with_vailed_data_Passed"/>
-                </methods>
-            </class>
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="logout_successfully"/>
-                </methods>
-            </class>
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="login_with_vailed_data_Passed"/>
+                    </methods>
+                </class>
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="logout_successfully"/>
+                    </methods>
+                </class>
 
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="logout_whenNotLoggedIn_shouldFail"/>
-                </methods>
-            </class>
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="login_with_valid_data_should_succeed"/>
-                </methods>
-            </class>
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="logout_whenNotLoggedIn_shouldFail"/>
+                    </methods>
+                </class>
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="login_with_valid_data_should_succeed"/>
+                    </methods>
+                </class>
 
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="login_with_invalid_data_should_fail"/>
-                </methods>
-            </class>
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="vailed_forget_Password_successfully"/>
-                </methods>
-            </class>
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="login_with_invalid_data_should_fail"/>
+                    </methods>
+                </class>
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="vailed_forget_Password_successfully"/>
+                    </methods>
+                </class>
 
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="invailed_forget_Password"/>
-                </methods>
-            </class>
-
-
-<<<<<<< HEAD
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="invailed_forget_Password"/>
+                    </methods>
+                </class>
 
 
-=======
-           
->>>>>>> cc11a8acb62eebe021fef14d861bf8addb4c6e89
-            <class name="testcases.TC01_Account">
-                <methods>
-                    <include name="randomlyChooseCurrency_successfully"/>
-                </methods>
-            </class>
- <!--
+                <class name="testcases.TC01_Account">
+                    <methods>
+                        <include name="randomlyChooseCurrency_successfully"/>
+                    </methods>
+                </class>
+
 
           <class name="testcases.TC03_selectRandomCategory">
             <methods>

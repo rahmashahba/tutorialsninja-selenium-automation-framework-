@@ -25,11 +25,8 @@ Experience Tutorial Ninja - Where Shopping Meets Innovation.
 
 ### Local testing execution example
 
-![Local testing execution example](TutorialsNinja_Demo_DriverFactory.gif)
+![Local testing execution example]("C:\Users\rahma\IdeaProjects\POM_Ninjia\tutorialsninja.gif")
 
-### Parallel testing execution example
-
-![Parallel testing execution example](TutorialsNinja_Demo_DriverFactory_Parallel_Execution_1.gif)
 
 ## Features
 
@@ -47,7 +44,7 @@ Experience Tutorial Ninja - Where Shopping Meets Innovation.
 To set up the  Tutorial Ninja application locally, follow these steps:
 
 1. Clone the repository:
-*   git clone https://github.com/Ayousry91/TutorialsNinja
+*   git clone https://github.com/rahmashahba/tutorialsninja-selenium-automation-framework-
 2. Navigate to the project directory:
 *   cd TutorialsNinja
 3. Install dependencies:
