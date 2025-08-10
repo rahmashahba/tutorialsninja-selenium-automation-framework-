@@ -25,8 +25,7 @@ Experience Tutorial Ninja - Where Shopping Meets Innovation.
 
 ### Local testing execution example
 
-![Local testing execution example]("C:\Users\rahma\IdeaProjects\POM_Ninjia\tutorialsninja.gif")
-
+![Local testing execution example](tutorialsninja.gif)
 
 ## Features
 
