@@ -4,27 +4,28 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+import static drivers.DriverHolder.getDriver;
 
 public class P05_E2E_AddToCart {
 
 
-    public P05_E2E_AddToCart(WebDriver driver)
-    {
+    public P05_E2E_AddToCart(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "(//button[@type='button'])[10]")
     WebElement addToWishList;
 
-    @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
-    WebElement addToWishListMsg;
-
-
     @FindBy(xpath = "//button[3]")
     WebElement productComparison;
 
     @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
-    WebElement productComparisonMsg;
+  private WebElement productComparisonMsg;
 
     @FindBy(xpath = "//i[@class='fa fa-heart']")
     WebElement myWishList;
@@ -44,21 +45,32 @@ public class P05_E2E_AddToCart {
     @FindBy(xpath = "//input[@id='button-payment-address']")
     WebElement step2Continue;
 
+    @FindBy(xpath = "//a[normalize-space()='product comparison']")
+    WebElement productComparisonbutton;
 
-    public void successfully_productComparison() throws InterruptedException {
-        Thread.sleep(3000);
-        this.productComparison.click();
-        Thread.sleep(3000);
-        System.out.println( this.productComparisonMsg.getText());
-    }
+    @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+    private WebElement addToWishListMsg;
 
 
     public void successfully_addToWishList() throws InterruptedException {
         Thread.sleep(3000);
         this.addToWishList.click();
         Thread.sleep(3000);
-       System.out.println( this.addToWishListMsg.getText());
+        System.out.println(this.addToWishListMsg.getText());
+
     }
+
+
+    public String successfully_addToWishListMsg() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(addToWishListMsg));
+        return addToWishListMsg.getText();
+    }
+
+    public void successfullyGoT0_myWishList() throws InterruptedException {
+        this.myWishList.click();
+    }
+
     public void successfully_AddToMyCart() throws InterruptedException {
         this.myWishList.click();
         Thread.sleep(3000);
@@ -71,7 +83,21 @@ public class P05_E2E_AddToCart {
         this.checkOut.click();
         Thread.sleep(3000);
         this.step2Continue.click();
+
+
     }
+
+    @FindBy(xpath = "(//div/div/button)[2]")
+    WebElement macbookProduct;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div[3]/button[1]")
+    WebElement iphoneProduct;
+
+    @FindBy(xpath = "(//i[@class='fa fa-exchange'])[1]")
+    public WebElement macbookaddtoCompareList;
+
+    @FindBy(xpath = "(//i[@class='fa fa-exchange'])[2]")
+    public WebElement iphoneAddtoCompareList;
 
     @FindBy(xpath = "//input[@placeholder=\"First Name\"]")
     WebElement first_name;
@@ -93,7 +119,7 @@ public class P05_E2E_AddToCart {
 
     @FindBy(xpath = "//select[@id=\"input-payment-zone\"]")
     //List<WebElement> regions ;
-    WebElement regions ;
+    WebElement regions;
 
     @FindBy(xpath = "//div/select/option[@value=\"3513\"]")
     WebElement region;
@@ -121,10 +147,38 @@ public class P05_E2E_AddToCart {
 
 
     @FindBy(xpath = "//h1[normalize-space()='Your order has been placed!']")
-    WebElement your_order_has_been_placed;
+    private WebElement your_order_has_been_placed;
 
 
-    public void new_register_acc(String first_name ,String last_name,String address1, String city, String postCode ) throws InterruptedException {
+    @FindBy(xpath = "(//div[@class='alert alert-success alert-dismissible'])[1]")
+    public WebElement successmessage;
+
+
+    public void clickOn_macbookaddtoCompareList() {
+        this.macbookaddtoCompareList.click();
+    }
+
+    public void clickOn_iphoneAddtoCompareList() {
+        this.iphoneAddtoCompareList.click();
+    }
+    public void productComparisonMessageText() {
+        System.out.println( this.productComparisonMsg.getText());
+    }
+
+    public String getSuccessMessageText() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(productComparisonMsg));
+        return productComparisonMsg.getText();
+    }
+
+    public void productComparisonCheck() throws InterruptedException {
+        Thread.sleep(3000);
+        this.productComparisonbutton.click();
+        Thread.sleep(3000);
+
+    }
+
+    public void new_register_acc(String first_name, String last_name, String address1, String city, String postCode) throws InterruptedException {
 
         this.first_name.sendKeys(first_name);
         this.last_name.sendKeys(last_name);
@@ -151,9 +205,14 @@ public class P05_E2E_AddToCart {
         this.button_confirm.click();
 
         Thread.sleep(5000);
-       System.out.println( this.your_order_has_been_placed.getText());
+        System.out.println(this.your_order_has_been_placed.getText());
     }
 
+    public String success_your_order_has_been_placed() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(your_order_has_been_placed));
+        return your_order_has_been_placed.getText();
+    }
 
 }
 
