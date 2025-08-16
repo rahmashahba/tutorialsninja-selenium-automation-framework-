@@ -11,13 +11,18 @@ import java.time.Duration;
 
 import static drivers.DriverHolder.getDriver;
 
-public class P05_E2E_AddToCart {
+public class P04_E2E_AddToCart {
 
 
-    public P05_E2E_AddToCart(WebDriver driver) {
+    public P04_E2E_AddToCart(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//input[@placeholder='Search']")
+    WebElement search;
+
+    @FindBy(xpath = "(//button)[5]")
+    WebElement searchButton;
     @FindBy(xpath = "(//button[@type='button'])[10]")
     WebElement addToWishList;
 
@@ -25,7 +30,7 @@ public class P05_E2E_AddToCart {
     WebElement productComparison;
 
     @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
-  private WebElement productComparisonMsg;
+    private WebElement productComparisonMsg;
 
     @FindBy(xpath = "//i[@class='fa fa-heart']")
     WebElement myWishList;
@@ -51,41 +56,6 @@ public class P05_E2E_AddToCart {
     @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
     private WebElement addToWishListMsg;
 
-
-    public void successfully_addToWishList() throws InterruptedException {
-        Thread.sleep(3000);
-        this.addToWishList.click();
-        Thread.sleep(3000);
-        System.out.println(this.addToWishListMsg.getText());
-
-    }
-
-
-    public String successfully_addToWishListMsg() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(addToWishListMsg));
-        return addToWishListMsg.getText();
-    }
-
-    public void successfullyGoT0_myWishList() throws InterruptedException {
-        this.myWishList.click();
-    }
-
-    public void successfully_AddToMyCart() throws InterruptedException {
-        this.myWishList.click();
-        Thread.sleep(3000);
-        this.AddToMyCart.click();
-        Thread.sleep(3000);
-        this.AddProdToMyCart.click();
-        Thread.sleep(3000);
-        this.myCart.click();
-        Thread.sleep(3000);
-        this.checkOut.click();
-        Thread.sleep(3000);
-        this.step2Continue.click();
-
-
-    }
 
     @FindBy(xpath = "(//div/div/button)[2]")
     WebElement macbookProduct;
@@ -154,6 +124,49 @@ public class P05_E2E_AddToCart {
     public WebElement successmessage;
 
 
+    public void searchClick(String searchKey) throws InterruptedException {
+        this.search.sendKeys(searchKey);
+        Thread.sleep(3000);
+        this.searchButton.click();
+        Thread.sleep(10000);
+    }
+
+    public void successfully_addToWishList() throws InterruptedException {
+        Thread.sleep(3000);
+        this.addToWishList.click();
+        Thread.sleep(3000);
+        System.out.println(this.addToWishListMsg.getText());
+
+    }
+
+
+    public String successfully_addToWishListMsg() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(addToWishListMsg));
+        return addToWishListMsg.getText();
+    }
+
+    public void successfullyGoT0_myWishList() throws InterruptedException {
+        this.myWishList.click();
+    }
+
+    public void successfully_AddToMyCart() throws InterruptedException {
+        this.myWishList.click();
+        Thread.sleep(3000);
+        this.AddToMyCart.click();
+        Thread.sleep(3000);
+        this.AddProdToMyCart.click();
+        Thread.sleep(3000);
+        this.myCart.click();
+        Thread.sleep(3000);
+        this.checkOut.click();
+        Thread.sleep(3000);
+        this.step2Continue.click();
+
+
+    }
+
+
     public void clickOn_macbookaddtoCompareList() {
         this.macbookaddtoCompareList.click();
     }
@@ -161,8 +174,9 @@ public class P05_E2E_AddToCart {
     public void clickOn_iphoneAddtoCompareList() {
         this.iphoneAddtoCompareList.click();
     }
+
     public void productComparisonMessageText() {
-        System.out.println( this.productComparisonMsg.getText());
+        System.out.println(this.productComparisonMsg.getText());
     }
 
     public String getSuccessMessageText() {

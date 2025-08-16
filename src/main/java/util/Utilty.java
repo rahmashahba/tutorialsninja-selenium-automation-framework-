@@ -1,14 +1,16 @@
 package util;
-import org.openqa.selenium.WebElement;
 
 import java.util.Random;
+
 public class Utilty {
 
 
-    public static int generateRandomInt(int max){
+    public static int generateRandomInt(int max) {
         Random rand = new Random();
-        return rand.nextInt(max)+1;
+        return rand.nextInt(max) + 1;
     }
+
+
     public class RandomDataGenerator {
         private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         private static final Random random = new Random();
@@ -30,15 +32,12 @@ public class Utilty {
             public static String password;
         }
 
-        public static int generateRandom(int min , int max ) {
+        public static int generateRandom(int min, int max) {
             Random random = new Random();
             return random.nextInt(max) + min;  // nextInt(5) gives 0-4, +1 makes it 1-5
         }
-
-
-
-
-
     }
 
+
 }
+

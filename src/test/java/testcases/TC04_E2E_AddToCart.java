@@ -11,10 +11,11 @@ import static util.Utilty.RandomDataGenerator.generateRandomString;
 
 public class TC04_E2E_AddToCart extends testbase {
     P01_Home_Page homePage;
-    P04_selectRandomCategory selectRandomCategory;
-    P05_E2E_AddToCart e2EAddToCart;
-    P03_account account;
     P02_Register_Page registerPage;
+    P03_account_Page accountPage;
+    P04_E2E_AddToCart e2EAddToCart;
+
+
 
     String first_name = generateRandomString(20, 30);
     String last_name = generateRandomString(20, 30);
@@ -33,9 +34,9 @@ public class TC04_E2E_AddToCart extends testbase {
 
         registerPage = new P02_Register_Page(getDriver());
         homePage = new P01_Home_Page(getDriver());
-        e2EAddToCart = new P05_E2E_AddToCart(getDriver());
-        selectRandomCategory = new P04_selectRandomCategory(getDriver());
-        account = new P03_account(getDriver());
+        e2EAddToCart = new P04_E2E_AddToCart(getDriver());
+  //      selectRandomCategory = new P04_selectRandomCategory(getDriver());
+        accountPage = new P03_account_Page(getDriver());
 
         homePage.Click_my_acount();
         homePage.Click_Register();
@@ -49,7 +50,7 @@ public class TC04_E2E_AddToCart extends testbase {
                 Utilty.RandomDataGenerator.CredentialsHolder.email);
         Thread.sleep(1000);
 
-        selectRandomCategory.searchClick("HP LP3065");
+        e2EAddToCart.searchClick("HP LP3065");
         e2EAddToCart.successfully_addToWishList();
         Thread.sleep(3000);
         softAssert = new SoftAssert();
@@ -68,28 +69,28 @@ public class TC04_E2E_AddToCart extends testbase {
 
         registerPage = new P02_Register_Page(getDriver());
         homePage = new P01_Home_Page(getDriver());
-        e2EAddToCart = new P05_E2E_AddToCart(getDriver());
-        selectRandomCategory = new P04_selectRandomCategory(getDriver());
-        account = new P03_account(getDriver());
+        e2EAddToCart = new P04_E2E_AddToCart(getDriver());
+      //  selectRandomCategory = new P04_selectRandomCategory(getDriver());
+        accountPage = new P03_account_Page(getDriver());
 
         System.out.println("Using credentials: " + Utilty.RandomDataGenerator.CredentialsHolder.email + " " + Utilty.RandomDataGenerator.CredentialsHolder.password);
         homePage.Click_my_acount();
         homePage.Click_Login();
-        account.new_login(Utilty.RandomDataGenerator.CredentialsHolder.email, Utilty.RandomDataGenerator.CredentialsHolder.password);
+        accountPage.new_login(Utilty.RandomDataGenerator.CredentialsHolder.email, Utilty.RandomDataGenerator.CredentialsHolder.password);
 
         Thread.sleep(500);
-        account.clickOnHomePageIcon();
+        accountPage.clickOnHomePageIcon();
         Thread.sleep(1000);
 
         e2EAddToCart.clickOn_macbookaddtoCompareList();
         Thread.sleep(1000);
-        //e2EAddToCart.getSuccessMessageText();
+        //get Success Message Text
         e2EAddToCart.productComparisonMessageText();
         e2EAddToCart.clickOn_iphoneAddtoCompareList();
         Thread.sleep(1000);
-       // e2EAddToCart.getSuccessMessageText();
+
         e2EAddToCart.productComparisonMessageText();
-        
+
         Thread.sleep(1000);
         softAssert.assertTrue(e2EAddToCart.getSuccessMessageText().contains("Success: You have added product to comparison"));
 
@@ -104,23 +105,18 @@ public class TC04_E2E_AddToCart extends testbase {
 
         registerPage = new P02_Register_Page(getDriver());
         homePage = new P01_Home_Page(getDriver());
-        e2EAddToCart = new P05_E2E_AddToCart(getDriver());
-        selectRandomCategory = new P04_selectRandomCategory(getDriver());
-        account = new P03_account(getDriver());
+        e2EAddToCart = new P04_E2E_AddToCart(getDriver());
+        accountPage = new P03_account_Page(getDriver());
 
-        /*homePage.Click_my_acount();
-        homePage.Click_Register();
 
-        registerPage.new_register_acc(first_name, last_name, email, phone, password, password_Confirm);
-   */
         System.out.println("Using credentials: " + Utilty.RandomDataGenerator.CredentialsHolder.email + " " + Utilty.RandomDataGenerator.CredentialsHolder.password);
         homePage.Click_my_acount();
         homePage.Click_Login();
-        account.new_login(Utilty.RandomDataGenerator.CredentialsHolder.email, Utilty.RandomDataGenerator.CredentialsHolder.password);
+        accountPage.new_login(Utilty.RandomDataGenerator.CredentialsHolder.email, Utilty.RandomDataGenerator.CredentialsHolder.password);
 
         Thread.sleep(500);
 
-        selectRandomCategory.searchClick("HP LP3065");
+        e2EAddToCart.searchClick("HP LP3065");
         e2EAddToCart.successfully_addToWishList();
         Thread.sleep(3000);
         e2EAddToCart.successfully_AddToMyCart();

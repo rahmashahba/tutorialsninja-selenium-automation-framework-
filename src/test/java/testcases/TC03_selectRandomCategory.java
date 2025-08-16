@@ -1,14 +1,10 @@
 package testcases;
 
 import Pages.P01_Home_Page;
-import Pages.P03_account;
-import Pages.P04_selectRandomCategory;
-//import Pages.P07_rondomly_categories;
+import Pages.P03_account_Page;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import util.Utilty;
 
 import java.util.List;
 import java.util.Random;
@@ -19,17 +15,14 @@ import static util.Utilty.generateRandomInt;
 public class TC03_selectRandomCategory extends testbase {
 
   P01_Home_Page homePage;
-  P03_account account ;
-  P04_selectRandomCategory e2e ;
+  P03_account_Page accountPage ;
     int index = generateRandomInt(8);
 
 
     @Test
     public void hoverByMouseAndSelectRandomCategory() throws InterruptedException {
         homePage = new P01_Home_Page(getDriver());
-        //loginPage = new P02_LoginPage(getDriver());
-        account = new P03_account(getDriver());
-       //account.clickOnHomePageIcon();
+        accountPage = new P03_account_Page(getDriver());
 
         List<WebElement> categoryElements = homePage.categoriesMenuListLi;
         System.out.println("Category elements are " + categoryElements.size());

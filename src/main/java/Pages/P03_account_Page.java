@@ -5,13 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Random;
 
-public class P03_account {
-    public P03_account(WebDriver driver) {
+public class P03_account_Page {
+    public P03_account_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -39,7 +38,7 @@ public class P03_account {
     @FindBy(xpath = "//input[@name =\"email\"]")
     WebElement email_after_frogetPassword;
 
-   @FindBy(xpath = "//h1[normalize-space()='Account Logout']")
+    @FindBy(xpath = "//h1[normalize-space()='Account Logout']")
     WebElement accountLogout;
 
     @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
@@ -99,6 +98,7 @@ public class P03_account {
         this.submit.click();
 
     }
+
     public void accountLogout_confirmation_msg() {
         System.out.println(this.accountLogout.getText());
     }
@@ -106,6 +106,7 @@ public class P03_account {
     public void email_confirmation_msg() {
         System.out.println(this.email_confirmationMsg.getText());
     }
+
     public boolean getConfirmationMessageText() {
         return this.email_confirmationMsg.isDisplayed();
     }
@@ -125,24 +126,21 @@ public class P03_account {
     WebElement currencyDropdown;
 
 
-    /**
-     * Clicks the currency dropdown to make the currency buttons visible.
-     */
+    // Clicks the currency dropdown to make the currency buttons visible.
+
     public void openCurrencyDropdown() {
 
         this.currencyDropdown.click();
 
     }
 
-    /**
-     * Selects a random currency by clicking one of the currency buttons.
-     */
 
-    public String getElementPrice()
-    {
+    //Selects a random currency by clicking one of the currency buttons.
+    public String getElementPrice() {
         String elementPrice = this.currencyDropdown.getText();
         return elementPrice;
     }
+
     public void selectRandomCurrency() throws InterruptedException {
         // Check if the list of buttons is populated and not empty.
         if (currencyButtons != null) {

@@ -17,9 +17,8 @@ import static Pages.PageBase.hoverToWebElement;
 public class P01_Home_Page {
 
     //constractor
-    public  P01_Home_Page(WebDriver driver)
-    {
-        PageFactory.initElements(driver , this);
+    public P01_Home_Page(WebDriver driver) {
+        PageFactory.initElements(driver, this);
 
     }
 
@@ -36,13 +35,10 @@ public class P01_Home_Page {
     @FindBy(xpath = "//*[@id=\"menu\"]/div[2]/ul/li")
     public List<WebElement> categoriesMenuListLi;
 
-    @FindBy(xpath = "(//*[@id=\"menu\"]/div[2]/ul/li/div)")
-    public List<WebElement> subCategoryElementsLi;
 
     //public action method
 
-    public void Click_my_acount()
-    {
+    public void Click_my_acount() {
         my_Account.click();
     }
 
@@ -50,20 +46,20 @@ public class P01_Home_Page {
         Thread.sleep(3000);
         register.click();
     }
-    public void Click_Login()
-    {
+
+    public void Click_Login() {
         login.click();
     }
+
     public boolean isLoginLinkDisplayed() throws InterruptedException {
         Thread.sleep(3000);
         try {
-
-
             return this.login.isDisplayed();
         } catch (TimeoutException e) {
             return false;
         }
     }
+
     public void hoverToRandomCategory(int index) {
         WebElement category = getDriver().findElement(By.xpath("(//div/ul[@class=\"nav navbar-nav\"]/li)[" + index + "]"));
         hoverToWebElement(getDriver(), category);

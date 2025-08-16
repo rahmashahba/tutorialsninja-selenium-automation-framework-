@@ -27,7 +27,7 @@
                         <include name="login_with_vailed_data_Passed"/>
                     </methods>
                 </class>
-                <class name="testcases.TC01_Account">
+              <class name="testcases.TC01_Account">
                     <methods>
                         <include name="logout_successfully"/>
                     </methods>

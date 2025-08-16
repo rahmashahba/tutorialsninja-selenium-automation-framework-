@@ -9,15 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 public class P02_Register_Page {
 
 
+    public P02_Register_Page(WebDriver driver) {
+        PageFactory.initElements(driver, this);
 
+    }
 
-    public  P02_Register_Page(WebDriver driver)
-   {
-       PageFactory.initElements(driver , this);
-
-   }
-
-   @FindBy(xpath = "(//div/input)[2]")
+    @FindBy(xpath = "(//div/input)[2]")
     WebElement first_name;
 
     @FindBy(xpath = "(//div/input)[3]")
@@ -36,7 +33,7 @@ public class P02_Register_Page {
     WebElement password_Confirm;
 
     @FindBy(xpath = "(//div/input)[8]")
-    WebElement  privacy_Polic;
+    WebElement privacy_Polic;
 
     @FindBy(xpath = "(//div/input)[9]")
     WebElement continue_Button;
@@ -48,10 +45,7 @@ public class P02_Register_Page {
     WebElement unsuccessRegister_msg;
 
 
-
-    public void new_register_acc(String first_name ,String last_name, String email ,String phone, String password, String password_Confirm )
-
-    {
+    public void new_register_acc(String first_name, String last_name, String email, String phone, String password, String password_Confirm) {
 
         this.first_name.sendKeys(first_name);
         this.last_name.sendKeys(last_name);
@@ -62,25 +56,22 @@ public class P02_Register_Page {
         this.privacy_Polic.click();
         this.continue_Button.click();
     }
+
     //check if register success
-   public boolean is_register_success(String register_success_msg) throws InterruptedException {
+    public boolean is_register_success(String register_success_msg) throws InterruptedException {
 
         Thread.sleep(3000);
         try {
 
             return this.successRegister_msg.getText().equals(register_success_msg);
-        }   catch (NoSuchElementException e) {
-        return false;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
-   }
-    public void unsuccessRegister_msg()
-    {
+
+    public void unsuccessRegister_msg() {
         System.out.println(this.unsuccessRegister_msg.getText());
     }
-
-
-
-
 
 
 }

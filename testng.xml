@@ -5,7 +5,6 @@
     <suite-files>
         <suite-file path="Sprint-1.xml"></suite-file>
        <suite-file path="Sprint-2.xml"></suite-file>
-      <!--  <suite-file path="Sprint-3.xml"></suite-file>&ndash;&gt;-->
     </suite-files>
 
 

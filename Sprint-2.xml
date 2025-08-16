@@ -3,7 +3,7 @@
     <parameter name="browsername" value=" "/>
     <test name="Registr Account with new data">
         <classes>
-            <class name="testcases.TC04_E2E_AddToCart">
+          <class name="testcases.TC04_E2E_AddToCart">
                 <methods>
                     <include name="successfully_addToWishList"/>
                 </methods>

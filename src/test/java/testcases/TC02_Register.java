@@ -2,7 +2,7 @@ package testcases;
 
 import Pages.P01_Home_Page;
 import Pages.P02_Register_Page;
-import Pages.P03_account;
+import Pages.P03_account_Page;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -17,7 +17,7 @@ public class TC02_Register extends testbase {
 
     P01_Home_Page homePage;
     P02_Register_Page registerPage;
-    P03_account account;
+    P03_account_Page accountPage;
     String first_name = generateRandomString(20, 30);
     String last_name = generateRandomString(20, 30);
     String email = generateRandomString(20, 25) + "@" + generateRandomString(5, 10) + ".com";
@@ -30,7 +30,7 @@ public class TC02_Register extends testbase {
 
         homePage = new P01_Home_Page(getDriver());
         registerPage = new P02_Register_Page(getDriver());
-        account = new P03_account(getDriver());
+        accountPage = new P03_account_Page(getDriver());
 
         homePage.Click_my_acount();
         homePage.Click_Register();
@@ -60,7 +60,7 @@ public class TC02_Register extends testbase {
 
         homePage = new P01_Home_Page(getDriver());
         registerPage = new P02_Register_Page(getDriver());
-        account = new P03_account(getDriver());
+        accountPage = new P03_account_Page(getDriver());
         homePage.Click_my_acount();
         homePage.Click_Register();
         registerPage.new_register_acc(first_name, last_name, email, phone, password, password_Confirm);
